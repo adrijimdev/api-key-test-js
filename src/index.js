@@ -1,4 +1,5 @@
 function showSerieInfo(hey) {
+  console.log(hey);
   const container = document.getElementById("container");
   container.className = "serie-info-container";
   container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div><h1 id='serie-title'></h1>\n<hr>";
