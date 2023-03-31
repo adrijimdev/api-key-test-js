@@ -24,3 +24,6 @@ dist-ssr
 *.sln
 *.sw?
 !.vscode/settings.json
+
+# Local Netlify folder
+.netlify
