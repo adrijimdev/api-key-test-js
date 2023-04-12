@@ -1,13 +1,19 @@
-function showSerieInfo(hey) {
-  console.log(hey);
+function showSerieInfo() {
+  console.log("estoy en src");
   const container = document.getElementById("container");
   container.className = "serie-info-container";
-  container.innerHTML = "<div class='go-back' onclick='returnToList();'>Volver atrás\n</div><h1 id='serie-title'></h1>\n<hr>";
+  container.innerHTML = "<h1 id='serie-title'></h1>\n<hr>";
   const serieTitle = document.getElementById("serie-title");
   const smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
-
-  fetch("/.netlify/functions/getSerieData")
+  // const idSerie = 100088;
+  // ?idSerie=${idSerie}
+  fetch("/.netlify/functions/getSerieData", {
+    method: "POST",
+    body: JSON.stringify({
+      idSerie: 94605
+    }),
+  })
     .then(response => {
       return response.json();
     })

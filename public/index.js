@@ -1,15 +1,24 @@
 function showSerieInfo() {
+  console.log("hola estoy aqui");
   const container = document.getElementById("container");
   container.className = "serie-info-container";
   container.innerHTML = "<h1 id='serie-title'></h1>\n<hr>";
   const serieTitle = document.getElementById("serie-title");
   const smallContainer = document.createElement("div");
   smallContainer.className = "small-container";
-
+  // const idSerie = 100088;
+  // idSerie=${idSerie}
   fetch("/.netlify/functions/getSerieData?idSerie=100088")
-    .then(response => {
-      return response.json();
-    })
+  // , {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json"
+  //   },
+  //   body: JSON.stringify({
+  //     idSerie: 94605
+  //   }),
+  // })
+    .then(response => response.json())
     .then(data => {
       container.innerHTML += `
         <div class="small-container">
